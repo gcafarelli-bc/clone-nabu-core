@@ -5,7 +5,7 @@ info:
     This is an OpenApi 3.0 specification for Nabu Gateway.
   version: 1.0.0
 servers:
-  - url: https://api.staging.blockchain.info/nabu-gateway/
+  - url: https://api.staging.blockchain.info/nabu-gateway
 paths:
   /brokerage/quote:
     post:
@@ -48,6 +48,8 @@ paths:
         - simple buy
       summary: Get available currency pairs for the given fiat currency
       description: Get available currency pairs for the given fiat currency.
+      security:
+        - bearerAuth: [ ]
       parameters:
         - name: fiatCurrency
           in: query
